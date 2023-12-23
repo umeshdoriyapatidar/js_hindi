@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Here is clock what you want choose one option</h1>
+    <button id="start">Start</button>
+    <button id="stop"> Stop </button>
+</body>
+
+<script>
+   
+
+    const seeTime = function(){
+        document.querySelector('h1').innerHTML = `The current Time is ${new Date().toLocaleTimeString()}`
+    }
+    // const sayMyName = function(){
+    //     console.log("Umesh")
+    // }
+
+    document.querySelector("#start").addEventListener('click', function(){
+        let startClock = setInterval(seeTime, 1000)
+        console.log("started");
+        document.querySelector('#stop').addEventListener('click', function(){
+            clearInterval(startClock)
+            document.querySelector('h1').innerHTML = `Your clock is stopped at ${new Date().toLocaleTimeString()}`
+            console.log("STOPPED");
+        })
+    })
+
+    // const changText = function(){
+    //   document.querySelector('h1').innerHTML = "best Js Series"
+    // }
+    // // setTimeout(sayMyName, 2000)
+    // const changeMe = setTimeout(changText, 3000)
+    
+    // // clearTimeout(changeMe)
+    // document.querySelector('#stop').addEventListener('click', function(){
+    //     clearTimeout(changeMe)
+    //     console.log("STOPPED");
+    // })
+
+
+</script>
+</html>
